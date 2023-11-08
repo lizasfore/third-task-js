@@ -12,7 +12,7 @@
   },
   "scripts": {
     "cypress:open": "cypress open",
-    "cy:run:second": "cypress run --e2e --browser chrome --config-file cypress.macbook-16.config.js"
+    "cy:run:second": "cypress run --e2e --browser chrome --config-file cypress.macbook-13.config.js"
   },
   "author": "",
   "license": "ISC",

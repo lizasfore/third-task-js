@@ -23,6 +23,6 @@ module.exports = defineConfig({
       return config;
     },
   },
-  viewportWidth: 1536,
-  viewportHeight: 960,
+  viewportWidth: 1280,
+  viewportHeight: 800,
 });
