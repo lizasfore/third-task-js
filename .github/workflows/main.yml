@@ -1,0 +1,22 @@
+# env:
+#   RECORD_KEY: ""
+name: Cypress Tests
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+      - name: Install dependencies
+        run: npm install
+      - name: Run Cypress tests
+        run: npx cypress run --record --key f814c72e-75a0-4bf6-9554-40acb363e05c
+      - name: Upload Cypress Dashboard video and screenshots
+        run: npx cypress run --record --key f814c72e-75a0-4bf6-9554-40acb363e05c --parallel --ci-build-id ${{ github.run_id }}
