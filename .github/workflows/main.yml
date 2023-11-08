@@ -17,6 +17,8 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run Cypress tests
-        run: npx cypress run --record --key f814c72e-75a0-4bf6-9554-40acb363e05c
+        run: npx cypress run --record --key ${{ secrets.RECORD_KEY }}
       - name: Upload Cypress Dashboard video and screenshots
-        run: npx cypress run --record --key f814c72e-75a0-4bf6-9554-40acb363e05c --parallel --ci-build-id ${{ github.run_id }}
+        run: npx cypress run --record --key ${{ secrets.RECORD_KEY }} --parallel --ci-build-id ${{ github.run_id }}
+        env:
+          RECORD_KEY: ${{ secrets.RECORD_KEY }}

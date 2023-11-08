@@ -14,8 +14,6 @@ class ExpertTalkPage {
 
     countrySelect: () => cy.get("#Phone_Number_Extension__c"),
 
-    // countryChoice: () => cy.xpath("//option[@value='+49']"),
-
     phoneBase: () => cy.get("#Phone_Number_Base__c"),
 
     compSite: () => cy.get("#Website"),
@@ -38,7 +36,6 @@ class ExpertTalkPage {
 
   selectReasonSupport() {
     this.elements.requestReason().select("Support");
-    // this.elements.supportOption().click();
   }
 
   inputFirstName() {
